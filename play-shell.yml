@@ -1,0 +1,19 @@
+---
+- hosts: '{{ host }}'
+  vars:
+    ansible_user: root
+    #ansible_password: "{{ lookup('env', 'SMARTAPE_SRV_USERPWD') }}"
+    playbook_name: ${{ github.event.inputs.playbook_name }}
+  #  role_name: 'update_wp_madison_page'
+    filename: '{{ file_name }}'
+    # ansible_user: root
+    # ansible_password: ZLCVfDBQ21nV
+
+  tasks:
+  - name: Echo role name in main playbook
+    shell: echo {{ role_name_to_ansible }}
+
+
+#- name: Install nginx
+  roles:
+    - role: ansible-role-shell
