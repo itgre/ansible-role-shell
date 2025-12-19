@@ -1,6 +1,6 @@
 ---
   - name: Test shell cmd
-    shell: {{ command }}
+    shell: "{{ command }}"
 # tasks file for ansible-role-shell
 # - name: Ensure ~/.shell exists
 #   file:
